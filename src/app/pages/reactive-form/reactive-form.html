@@ -1,0 +1,45 @@
+<p>reactive-form works!</p>
+
+<input placeholder="Enter email" type="text" [formControl]="email">
+<br>
+<br>
+<input placeholder="Enter Password" type="text" [formControl]="password">
+<br>
+<br>
+<!-- <button (click)="handleLogin()">login</button>
+<button (click)="reset()">Reset</button> -->
+
+<hr>
+<h2>For Group</h2>
+
+<form [formGroup]="signupForm" (ngSubmit)="handleSubmit()" method="post">
+    <input type="text" formControlName="name" name="name" placeholder="Name">
+    @if(name?.hasError('required') && name?.touched){
+        <p>Name is required.</p>
+    }
+    @if(name.errors?.['maxlength'] && name?.touched){
+        <p>Name upto 20 charecters.</p>
+    }
+    <br>
+    <br>
+    <input type="email" formControlName="email" name="email" placeholder="Email">
+    @if(email?.hasError('required') && name?.touched){
+        <p>email is required.</p>
+    }
+    @if(email?.errors?.['email'] && name?.touched){
+        <p>email is not valid.</p>
+    }
+    <br>
+    <br>
+    <input type="text" formControlName="password" name="password" placeholder="Password">
+    @if(password.hasError('required') && password.touched){
+        <p>Password is required.</p>
+    }
+    @if(password?.errors?.['minlength'] && password.touched){
+        <p>Password must be 5 charecters.</p>
+    }
+    <br>
+    <br>
+    <button [disabled]="signupForm.invalid">Submit</button>
+
+</form>

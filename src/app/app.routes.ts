@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Profile } from './pages/profile/profile';
+import { ReactiveForm } from './pages/reactive-form/reactive-form';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,6 @@ export const routes: Routes = [
     // {path:'about', component:About},
     {path:'about/:name', component:About},
     {path:'about/:name/:age', component:About},
-    {path:'profile', component: Profile}
+    {path:'profile', component: Profile},
+    {path:'reactive-form', component: ReactiveForm},
 ];
