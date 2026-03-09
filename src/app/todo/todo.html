@@ -1,0 +1,59 @@
+<p>todo works!</p>
+
+<div>
+  @if (isLogin()) {
+    <span>Welcome, Explore aur Todo</span>
+    <button (click)="handleLogin()">Logout</button>
+  } @else {
+    <span>Please,Login</span>
+    <button (click)="handleLogin()">Login</button>
+  }
+
+  <p>--------------</p>
+  <ul>
+    @for (user of users(); track user) {
+      <li [style.backgroundColor] = "$odd ? '#ccc' : '#fff'">
+        {{ user }}
+        @if($first){
+            <span style="color: red;">Admin</span>
+        }
+        @if($last){
+            <span style="color: yellow;">Guest</span>
+        }
+        @if($count == $index+1){
+            <span style="color: green;">Total Count : {{$count}}</span>
+        }
+    </li>
+    }
+  </ul>
+
+  <select (change)="handleSelectChange($event)" name="statusOption" id="statusOption">
+    <option value="noStarted">No started</option>
+    <option value="loading">loading</option>
+  </select>
+
+  @switch(status()){
+    @case('noStarted'){
+        <span>No Update Yet</span>
+    }
+    @case('loading'){
+        <span>Loading Started</span>
+    }
+    @default{
+        <span>Error | Default</span>
+    }
+  }
+
+  <h1>Input Binding</h1>
+  <input type="text" [value]="name()" (click)="name.set($event.target.value)">
+  <input type="number" [(ngModel)]="age">
+
+  <!-- GETTER AND SETTER -->
+   <hr>
+   <br>
+   <h1>{{co_employee}}</h1>
+   <input type="text" [(ngModel)]="co_employee">
+ 
+   <h2>{{numValue}}</h2>
+   <button (click)="sendData()">Click</button>
+</div>

@@ -1,0 +1,24 @@
+<h1>Profile Component</h1>
+
+
+<button class="btn" (click) = 'handleClick($event)'>Click</button>
+<button class="btn" (mouseenter) = 'handleClick($event)'>Click</button>
+<button class="btn" (mouseleave) = 'handleClick($event)'>Click</button>
+
+<input (input)="changeInput($event)" type="text">
+
+
+<!-- ------------- -->
+
+<h1>
+    {{num1}}
+</h1>
+<h2>Singal: {{count}}</h2>
+
+<button (click)="UpdateData">Update Data</button>
+<button (click)="updateSingladata">Update Data</button>
+
+<hr>
+<app-todo [numValue]="num1" (clickFromChild)="clickFromChild($event)"></app-todo>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, reprehenderit eius pariatur labore laudantium modi enim! Maiores voluptatibus quis quisquam ut sequi voluptatum magnam? Explicabo praesentium rem nam animi amet!
+<hr>

@@ -1,0 +1,14 @@
+<p>home works!</p>
+
+<button (click)="redirectToProfile()">Go to Profile Page</button>
+
+<a routerLink="/profile" [queryParams]="{id:1, name:'page', age:23}">Profile </a>
+
+
+
+<h3>redirect to About </h3>
+
+<a routerLink="/about/Sufiyan/44">Go to About</a> <br>
+<a routerLink="/about/Sufiyan"> Go TO About</a><br>
+<a [routerLink]="['/about', 'Radhe Karn', 36]">Go To About</a><br>
+<button (click)="redirectToAbout()">Go to About</button>

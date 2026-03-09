@@ -1,0 +1,54 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  padding: 12px 40px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav span {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+/* hover effect */
+nav ul li a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* active route */
+nav ul li a.active {
+  background: white;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+nav span {
+  cursor: pointer;
+}
