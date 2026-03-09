@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, effect, signal, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './about.css',
 })
 export class About {
+  @ViewChild('container', {read:ViewContainerRef})
+  container!:ViewContainerRef;
 
   userData = signal<any>({})
   userKey:string[] = ['']
+
 
   constructor(public route:ActivatedRoute){
     effect(()=>{
@@ -24,5 +27,12 @@ export class About {
       console.log(params)
       this.userData.set(params)
     })
+  }
+
+  async handleLoadComp(){
+    const view = this.container;
+    view.clear();
+    const {DynamicComponent} = await import('../../component/dynamic-component/dynamic-component')
+    view.createComponent(DynamicComponent)
   }
 }

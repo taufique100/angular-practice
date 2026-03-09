@@ -4,4 +4,11 @@
   @for (uKey of userKey; track uKey) {
     <li>{{uKey}} {{userData()[uKey]}}</li>
   }
+
+  <button (click)="handleLoadComp()">Load user Information</button>
 </ul>
+
+<ng-container #container>
+</ng-container>
+
+<!-- <div #container>load---div</div> -->
