@@ -7,6 +7,7 @@ import { Controlcount } from './controlcount/controlcount';
 import { TrimStringPipe } from './custome-pipe/trim-string-pipe';
 import { CommonModule } from '@angular/common';
 import { Header } from './component/header/header';
+import { Operators } from './services/operators';
 
 @Component({
   selector: 'app-root',
@@ -27,4 +28,8 @@ import { Header } from './component/header/header';
 export class App {
   subject: WritableSignal<string> = signal<string>("lorem epsum lorem epsum hai...")
   protected readonly title = signal('my-app');
+
+  constructor(public operators:Operators){}
+
+  
 }

@@ -3,6 +3,7 @@ import { Home } from './pages/home/home';
 import { About } from './pages/about/about';
 import { Profile } from './pages/profile/profile';
 import { ReactiveForm } from './pages/reactive-form/reactive-form';
+import { authGuard } from './guard/auth-guard';
 
 export const routes: Routes = [
     {
@@ -17,5 +18,9 @@ export const routes: Routes = [
     {path:'about/:name', component:About},
     {path:'about/:name/:age', component:About},
     {path:'profile', component: Profile},
-    {path:'reactive-form', component: ReactiveForm},
+    {
+        path:'reactive-form', 
+        component: ReactiveForm,
+        canActivate:[authGuard]
+    },
 ];
